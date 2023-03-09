@@ -9,9 +9,6 @@ import requests
 import time
 import re
 
-
-# ### Question 1.2(a)
-
 # In[434]:
 
 
@@ -28,9 +25,6 @@ def download_01():
     print("Download Successfully!")
 
 download_01()
-
-
-# ### Question 1.2(b)
 
 # In[435]:
 
@@ -57,8 +51,6 @@ def download_page(url,x):
 download_page('https://www.ebay.com/sch/i.html?_nkw=amazon+gift+card&LH_Sold=1',10)
 
 
-# ### Question 1.2(c)
-
 # In[436]:
 
 
@@ -66,9 +58,6 @@ def parse():
     for i in range(1,11):
         with open(f"amazon_gift_card_{str(i).zfill(2)}.htm") as f:
             soup = BeautifulSoup(f, 'lxml')
-
-
-# ### Question 1.2(d)
 
 # In[437]:
 
@@ -100,9 +89,6 @@ for i in range(1,11):
                     shipping = s.text
             list_shipping.append(shipping)
 print(list_title,'|',list_price,'|',list_shipping)
-
-
-# ### Question 1.2(e)
 
 # In[438]:
 
@@ -143,11 +129,7 @@ def num_overvalue(x):
 
 num_overvalue(600)
 
-
-# ### Question 1.2(f)
-
 # In[439]:
-
 
 # Calculate fraction
 counter1 = num_overvalue(600)
@@ -156,65 +138,11 @@ def frac(counter):
     return(frac)
 
 frac(counter1)
-
+### The factotion of the face value is under the real value of gift card is above
 ### There are several reasons. Firstly, people dont want to buy the gift card by walking out. Secondly,
 ### maybe there are some knowledge gap and the sellers could use those gaps to make money. Finally, maybe some
 ### gift card are unique, people like to collect them.
 
-
-# ### Question 2.2(a)
-
-# In[442]:
-
-
-def login(url):
-    headers = {'User-Agent': 'Mozilla/5.0'}
-    time.sleep(1) 
-    payload = {
-        "login_action":"1",
-        "login_username":"daran",
-        "login_password":"test1234",
-        "user_remeber":"1",
-        "submit":"1"
-    }
-    session_requests = requests.session()
-    res = session_requests.post(url,payload)
-    if "200" in str(res):
-        print("Login Successfully!")
-
-login("https://www.fctables.com/user/login/")
-
-
-# ### Question 2.2(b)
-
-# In[444]:
-
-
-# Verify my login status by Cookies
-def login_cookie(url,page2_url):
-    headers = {'User-Agent': 'Mozilla/5.0'}
-    time.sleep(1) 
-    payload = {
-        "login_action":"1",
-        "login_username":"daran",
-        "login_password":"test1234",
-        "user_remeber":"1",
-        "submit":"1"
-    }
-    session_requests = requests.session()
-    res = session_requests.post(url,payload)
-    cookies = session_requests.cookies.get_dict()
-    page2 = session_requests.get(page2_url, cookies=cookies)
-    if page2.text.find('Wolfsburg') >= 0:
-    #The return shows that in index 44473, the word "wolfsburg" showes in the page 2.
-        print("Wolfsburg is found!")
-    else:
-        print('Null')
-
-login_cookie("https://www.fctables.com/user/login/","https://www.fctables.com/tipster/my_bets/")
-
-
-# In[ ]:
 
 
 
