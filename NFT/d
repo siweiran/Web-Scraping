@@ -1,1 +1,1 @@
-
+This project is to web-scraping the NFT data from the website "opensea" and store those data into the MongoDB by python. I use Python to drive the google chrome, click on the top 8 NFT and download it. Then, I scape the important attributes of each NFT and save them into dictionary. Finally, I create a database in the MongoDB and insert those NFT information into MongoDB.
