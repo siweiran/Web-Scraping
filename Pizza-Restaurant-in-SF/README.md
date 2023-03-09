@@ -1,1 +1,1 @@
-
+This project is to web-scraping the popular pizza restaurant information from "YellowPage" and then insert them into MongoDB. I scrap the restaurant information such as name, rank, rating and reviews. Then I download each restaurant's page and use the address information to find their geolocation code from logging and searching on another website. Finally, I insert those information into MongoDB and update it.
