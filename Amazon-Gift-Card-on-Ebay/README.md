@@ -1,1 +1,1 @@
-
+In this project, one thing is to do web scraping for Amazon gift card information on Ebay by BeautifulSoup in Python. I scraped the information of gift card such as face value and delivery fee for over 600 items on Ebay. Additionlly, I use payload information and cookies to login into a bet website by coding in python.
